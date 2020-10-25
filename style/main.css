@@ -1,0 +1,226 @@
+/* Global settings */
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap&subset=latin-ext');
+body {
+      background-color: #010207;
+      font-family: 'Inconsolata', monospace;
+}
+
+a {
+      text-decoration: none;
+      color: #fff;
+}
+
+h1 {
+      font-size:3.3em;
+}
+
+/* Overlay */
+@keyframes overlay-animation {
+      0% { opacity: 1; }
+      75% { opacity: 1; }
+      100% { opacity: 0; }
+}
+
+#overlay {
+      position: fixed;
+      visibility: visible;
+      pointer-events: none;
+      width: 100%; 
+      height: 100%; 
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #010207;
+      z-index: 2; 
+      animation: overlay-animation 600ms ease-in both;
+}
+
+/* Container */
+.vcard-container {
+      max-width: 50em;
+      margin: 7em auto 0 auto;      
+}
+
+/* Language navigation */
+.nav-languages {
+      text-align: right;
+      cursor: default;
+}
+
+.nav-languages-list {
+      list-style-type: disc;
+}
+
+.nav-languages-list li {
+      display:inline;
+      cursor: pointer;
+}
+
+.nav-languages-list li + li:before {
+      content: " • ";
+      padding: 0 0.1em;
+      color: #161c2d;
+}
+
+.lang-switch{
+      cursor: pointer;
+}
+/* Wrapper */
+.vcard-wrapper {
+      background-color: #161c2d;
+      border-radius:5em 1em 1em 1em;
+      display:grid;
+      grid-template-columns: 33% auto;
+      height:20em;
+}
+
+.nav-active-option {
+      font-weight: 700;
+}
+
+/* Vcard stylings */
+
+.vcard-header {
+      margin:0;
+}
+
+.vcard-header-top {
+      padding-top: 0.25em;
+}
+
+.vcard-header-description {
+      padding:0;
+      font-size:0.9em;
+}
+
+.vcard-content {
+      font-size:1.4em;
+}
+
+.vcard-email {
+      text-align:right;
+      padding: 0.15em 1em;
+      font-style:normal;
+      font-size:1.1em;
+      font-weight:700;
+}
+
+/* Social media */
+.social-icon {
+      width:2.5em;
+      height:2.5em;
+      padding:1em;
+}
+
+.social-icon-wrapper {
+      display:flex;
+      flex-wrap: wrap;
+      padding-left:0.3em;
+      margin-top: 2em;
+      
+}
+
+
+/* Avatar */
+.vcard-avatar-wrapper{
+      position:relative;
+      width:100%;
+      height:60%;
+}
+
+.vcard-avatar {
+      width: 15em;
+      height: 15em;
+      position: absolute;
+      left: -0.5em;
+      top: -1em;
+      border-radius: 50%;
+}
+
+/* Colors */
+.color-dark {
+      color:#161c2d;
+}
+
+.color-def {
+      color:#d3fbd8;
+}
+
+.color-gray {
+      color: #7c7ab1;
+}
+
+/* Responsiveness queries */
+@media only screen and (max-width: 1000px) {
+
+      .vcard-container {
+            width: auto;
+            margin: 2em auto 1.5em auto;     
+            padding: 0 1.5em 0 1.5em;
+            
+      }
+
+      .vcard-wrapper {
+            border-radius:1em 1em 1em 1em;
+            display:grid;
+            grid-template-columns: auto;
+            height: auto;
+
+      }
+
+
+      .vcard-content {
+            margin: 2em 1em 1em 2em;
+      }
+
+      .vcard-aside {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            padding-top: 0.5em;
+      }
+      
+      .vcard-header {
+            text-align:center;
+            margin: 0 5% 0 5%;
+      }
+
+      .vcard-avatar-wrapper{
+            position:relative;
+            width:100%;
+            height:60%;
+
+      }
+      
+      .social-icon-wrapper {
+            margin-top: 0em;
+      }
+
+      .vcard-avatar {
+            width: 15em;
+            height: 15em;
+            position: relative;
+            display: block;
+            margin: auto;
+
+      }      
+ 
+}
+
+@media only screen and (max-width: 500px) {
+      .vcard-header-top {
+            font-size: 2em;
+      }
+
+
+}
+/* i don't care about responsiveness anymore */
+@media only screen and (max-width: 360px) {
+      .vcard-container {
+            width: 20em;
+            margin: 2em 0 1em 0;     
+            
+      }
+
+}
