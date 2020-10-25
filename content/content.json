@@ -7,50 +7,50 @@
       },
 
       "defaultLanguage": "en",
-      "email": "contact@michalbrzozowski.com",
-      "canonical": "https://michalbrzozowski.com",
+      "email": "mail@example.com",
+      "canonical": "https://example.com",
       "avatarSrc": "../images/avatar.jpg",
-      "githubUrl": "https://github.com/brzozowsky",
-      "linkedInUrl": "https://www.linkedin.com/in/micha%C5%82-brzozowski-84377419a/",
+      "githubUrl": "https://github.com/",
+      "linkedInUrl": "https://www.linkedin.com/",
       "webcontent":
       {
             "metaTitle":
             {
-                  "pl": "Michał Brzozowski",
-                  "en": "Michal Brzozowski Vcard",
-                  "de": "Michal Brzozowski Vcard"
+                  "pl": "Polski",
+                  "en": "English",
+                  "de": "Deutsch"
             },
 
             "metaDescription":
             {
-                  "en": "Software developer based in Poland, ready to relocate anywhere within the European Union. My particular field of interest is web development - both back and front end. Also a passionate graphic designer.",
-                  "pl": "Programista",
-                  "de": "Softwareenwickler"
+                  "en": "",
+                  "pl": "",
+                  "de": ""
             },
 
             "name":
             {
-                  "pl": "Michał Brzozowski",
-                  "en": "Michal Brzozowski",
-                  "de": "Michal Brzozowski"                    
+                  "pl": "Polski",
+                  "en": "English",
+                  "de": "Deutsch"
             },
             "shortdesc":
             {
-                  "pl":"Polsko-Japońska Akademia Technik Komputerowych, Warszawa",
-                  "en":"Polish-Japanese Academy of Information Technology, Warsaw, Poland",
-                  "de":"Polish-Japanese Academy of Information Technology, Warschau, Polen"
+                  "pl":"Polski",
+                  "en":"English",
+                  "de":"Deutsch"
             },
             "longdesc":
             {
-                  "pl":"Programista gotowy do relokacji w obrębie Unii Europejskiej.  Moje szczególne pole zainteresowań to web development - zarówno back jak i front end. Moją pasją jest także grafika komputerowa.",
-                  "en":"Software developer based in Poland, ready to relocate anywhere within the European Union. My particular field of interest is web development - both back and front end. Also a passionate graphic designer.",
-                  "de":"Softwareentwickler in Polen ansässig, bereit, überall hin in der EU zu ziehen. Mein Interessenschwerpunkt innerhalb der Informatik liegt in der Webentwicklung - sowohl Front-End als auch Back-End. Zu meinem Interessengebiet gehört obendrein Computergrafik."
+                  "pl":"Polski",
+                  "en":"English",
+                  "de":"Deutsch"
             },
             "botSafeEmail":
             {
-                  "pl": "Włącz obsługę Javascript aby wyświetlić mój adres e-mail lub skontaktuj się za pośrednictwem GitHuba",
-                  "en": "Turn on your Javascript to see my e-mail address or contact me via Github",
-                  "de": "Schalten Sie Ihr Javascript ein, um meine E-mail-Adresse anzuzeigen, oder kontaktieren Sie mich über Github"
+                  "pl": "Polski",
+                  "en": "English",
+                  "de": "Deutsch"
             }
 
       }
