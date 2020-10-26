@@ -6,6 +6,7 @@
             "de": true
       },
       "defaultLanguage": "en",
+      "styleSrc": "style/main.css",
       "email": "mail@example.com",
       "canonical": "http://michalbrzozowski.com",
       "avatarSrc": "../images/avatar.jpg",
