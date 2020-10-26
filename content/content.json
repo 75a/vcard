@@ -3,13 +3,26 @@
       {
             "pl": true,
             "en": true,
-            "de": true
+            "de": true,
+            "is": false
       },
       "defaultLanguage": "en",
       "styleSrc": "style/main.css",
       "email": "mail@example.com",
-      "canonical": "http://michalbrzozowski.com",
+      "canonical": "http://example.com",
       "avatarSrc": "../images/avatar.jpg",
+      "iconLinks": {
+            "Github": {
+                  "iconSrc": "images/icons/github.svg",
+                  "url": "https://github.com"
+            },
+            "LinkedIn": {
+                  "iconSrc": "images/icons/linkedin.svg",
+                  "url": "https://linkedin.com"
+            }
+      },
+
+
       "githubUrl": "https://github.com/",
       "linkedInUrl": "https://www.linkedin.com/",
       "webcontent":

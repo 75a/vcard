@@ -50,13 +50,9 @@
                                     <img class="vcard-avatar" src="<?=$contentInjector->content('avatarSrc')?>"  alt="Avatar image">
                               </div>
                               <div class="social-icon-wrapper">
-                                    <a href="<?=$contentInjector->content('githubUrl')?>" target="_blank">
-                                        <img class="social-icon" src="images/icons/github.svg" alt="Github">
-                                    </a>
+                                    <?php $contentInjector->injectExternalLinks() ?>
 
-                                    <a href="<?= $contentInjector->content('linkedInUrl') ?>" target="_blank">
-                                        <img class="social-icon" src="images/icons/linkedin.svg" alt="LinkedIn">
-                                    </a>
+
                               </div>
                         </aside>
                         <article>

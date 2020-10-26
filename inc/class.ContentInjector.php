@@ -15,7 +15,6 @@ class ContentInjector
     public function isUserOnLanguageSpecificWebpage(): bool
     {
         if (isset($_GET['lang'])){
-
             $langParameter = $_GET['lang'];
             if ($langParameter !== "" && array_key_exists($langParameter,$this->getAvailableLanguages())) {
                 return true;
@@ -39,6 +38,12 @@ class ContentInjector
     {
         return $this->jsonContent["languages"];
     }
+    public function getIconLinksData(): array
+    {
+        return $this->jsonContent["iconLinks"];
+    }
+
+
 
     public function getBodyData(): string
     {
@@ -77,5 +82,23 @@ class ContentInjector
                 $menuOption->show();
             }
         }
+    }
+
+    public function injectExternalLinks(): void
+    {
+        foreach ($this->getIconLinksData() as $service => $serviceData){
+            $iconSrc = $serviceData["iconSrc"];
+            $url = $serviceData["url"];
+            echo "<a href=\"{$url}\" target=\"_blank\"><img class=\"social-icon\" src=\"{$iconSrc}\" alt=\"$service\"></a>";
+        }
+
+
+/*        <a href="<?=$contentInjector->content('githubUrl')?>" target="_blank">*/
+//            <img class="social-icon" src="images/icons/github.svg" alt="Github">
+//        </a>
+//
+/*        <a href="<?= $contentInjector->content('linkedInUrl') ?>" target="_blank">*/
+//            <img class="social-icon" src="images/icons/linkedin.svg" alt="LinkedIn">
+//        </a>
     }
 }
