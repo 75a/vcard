@@ -1,14 +1,15 @@
 <?php
+    require_once('class.MenuOption.php');
+
     $contentJSON = file_get_contents("content/content.json");
     $content = json_decode($contentJSON, true);
     $webContent = $content['webcontent'];
+    $activeLanguage = $content['defaultLanguage'];
 
-    $lang = $content['defaultLanguage'];
     $jsStorage = true;
-
     if ($_GET['lang'] !== "") {
         if (array_key_exists($_GET['lang'],$content['languages'])){
-            $lang = $_GET['lang'];
+            $activeLanguage = $_GET['lang'];
             $jsStorage = false;
         }
     }
@@ -18,18 +19,20 @@
         $bodyData = 'data-loadfromstorage';
     }
 
+    MenuOption::setActiveClassName("lang-switch color-def");
+    MenuOption::setInactiveClassName("lang-switch color-dark");
 
 ?>
 <!doctype html>
-<html lang="<?=$lang?>">
+<html lang="<?=$activeLanguage?>">
 
       <head>
             <meta charset="utf-8">
             <meta http-equiv="x-ua-compatible" content="ie=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <meta name="description" content="<?= $webContent['metaDescription'][$lang] ?>">
+            <meta name="description" content="<?= $webContent['metaDescription'][$activeLanguage] ?>">
 
-            <title><?= $webContent['metaTitle'][$lang] ?></title>
+            <title><?= $webContent['metaTitle'][$activeLanguage] ?></title>
 
             <link rel="stylesheet" href="style/main.css">
             <link rel=”canonical” href="<?= $content['canonical'] ?>">
@@ -51,23 +54,16 @@
                   <nav class="nav-languages">
                         <ul class="nav-languages-list">
                         <?php
-                            foreach($content['languages'] as $language => $active) {
-                                $langClass =  "lang-switch color-dark";
-                                if ($active) {
-                                    if ($language == $lang) {
-                                        $langClass = "lang-switch color-def";
+                            foreach($content['languages'] as $language => $isActive){
+                                if ($isActive){
+                                    $menuOption = new MenuOption();
+                                    $menuOption->setLanguage($language);
+                                    $menuOption->setURL($content['canonical'] . '/' . $language);
+                                    if ($language == $activeLanguage) {
+                                        $menuOption->setActive(true);
                                     }
-                                ?>
-                                    <li>
-                                        <a class="<?=$langClass?>"
-                                           data-type='lang'
-                                           data-language="<?=$language?>"
-                                           href="<?=$content['canonical']?>/<?=$language?>">
-                                            <?=$language?>
-                                        </a>
-                                    </li>
-                                <?php
-                                 }
+                                    $menuOption->show();
+                                }
                             }
                         ?>
                         </ul>
@@ -90,17 +86,17 @@
                         <article>
                               <h1 class="vcard-header vcard-header-top color-def">
                                     <span id="name">
-                                        <?= $webContent['name'][$lang] ?>
+                                        <?= $webContent['name'][$activeLanguage] ?>
                                     </span>
                               </h1>
                               <p class="vcard-header vcard-header-description color-gray">
                                     <span id="shortdesc">
-                                          <?= $webContent['shortdesc'][$lang] ?>
+                                          <?= $webContent['shortdesc'][$activeLanguage] ?>
                                     </span>
                               </p>
                               <p class="vcard-content color-def">
                                   <span id="longdesc">
-                                        <?= $webContent['longdesc'][$lang] ?>
+                                        <?= $webContent['longdesc'][$activeLanguage] ?>
                                   </span>
                               </p>
                         </article>
@@ -108,7 +104,7 @@
                   <footer>
                         <address class="vcard-email">
                               <a id="email" class="color-dark" href="#">
-                                    <?= $webContent['botSafeEmail'][$lang]?>
+                                    <?= $webContent['botSafeEmail'][$activeLanguage]?>
                               </a>
                         </address>
                   </footer>
