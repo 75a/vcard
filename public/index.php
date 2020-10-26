@@ -1,6 +1,6 @@
 <?php
-    require_once('inc/class.LanguageMenuOption.php');
-    require_once('inc/class.ContentInjector.php');
+    require_once('../inc/class.LanguageMenuOption.php');
+    require_once('../inc/class.ContentInjector.php');
 
     LanguageMenuOption::setActiveClassName("lang-switch color-def");
     LanguageMenuOption::setInactiveClassName("lang-switch color-dark");
@@ -24,11 +24,11 @@
             <link rel="stylesheet" href="<?=$contentInjector->content('styleSrc')?>">
             <link rel=”canonical” href="<?=$contentInjector->content('canonical')?>">
 
-            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-            <link rel="manifest" href="/site.webmanifest">
-            <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+            <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+            <link rel="manifest" href="site.webmanifest">
+            <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
 
             <meta name="msapplication-TileColor" content="#0c1727">
             <meta name="theme-color" content="#181b2d">   
