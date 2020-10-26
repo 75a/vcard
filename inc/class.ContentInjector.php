@@ -1,5 +1,5 @@
 <?php
-require_once 'class.MenuOption.php';
+require_once 'class.LanguageMenuOption.php';
 
 class ContentInjector
 {
@@ -67,7 +67,7 @@ class ContentInjector
     {
         foreach($this->getAvailableLanguages() as $language => $isActive){
             if ($isActive){
-                $menuOption = new MenuOption();
+                $menuOption = new LanguageMenuOption();
                 $menuOption->setLanguage($language);
                 $menuOption->setURL($this->content('canonical') . '/' . $language);
                 if ($language == $this->getDisplayLanguage()) {

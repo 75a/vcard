@@ -1,6 +1,6 @@
 <?php
 
-class MenuOption
+class LanguageMenuOption
 {
     private static string $activeClassName;
     private static string $inactiveClassName;

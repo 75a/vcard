@@ -1,9 +1,9 @@
 <?php
-    require_once('inc/class.MenuOption.php');
+    require_once('inc/class.LanguageMenuOption.php');
     require_once('inc/class.ContentInjector.php');
 
-    MenuOption::setActiveClassName("lang-switch color-def");
-    MenuOption::setInactiveClassName("lang-switch color-dark");
+    LanguageMenuOption::setActiveClassName("lang-switch color-def");
+    LanguageMenuOption::setInactiveClassName("lang-switch color-dark");
 
     $contentInjector = new ContentInjector();
     $contentInjector->loadJSONContents('content/content.json');
