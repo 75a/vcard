@@ -1,8 +1,4 @@
 AddHandler application/x-httpd-php74 php
-Redirect /index.php /index.php?lang=en
 
-RewriteEngine on
-
-RewriteCond %{HTTP_HOST} ^www.michalbrzozowski.com
-RewriteRule (.*) https://michalbrzozowski.com/$1 [R=301,L]
-RewriteRule ^([a-z0-9]+|)/?$ index.php?lang=$1 [QSA,NC]
+RewriteEngine On
+RewriteRule ^([a-z0-9_]+)/?$ index.php?lang=$1 [QSA]

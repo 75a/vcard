@@ -15,6 +15,7 @@ class ContentInjector
     public function isUserOnLanguageSpecificWebpage(): bool
     {
         if (isset($_GET['lang'])){
+
             $langParameter = $_GET['lang'];
             if ($langParameter !== "" && array_key_exists($langParameter,$this->getAvailableLanguages())) {
                 return true;

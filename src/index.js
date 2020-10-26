@@ -1,7 +1,7 @@
 const LANGUAGE_SWITCH_CLASS = "lang-switch";
 const ACTIVE_LANGUAGE_CLASS = "lang-switch color-def";
 const NONACTIVE_LANGUAGE_CLASS = "lang-switch color-dark";
-
+console.log("test");
 class App{
     jsonData;
 

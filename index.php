@@ -1,6 +1,7 @@
 <?php
-    require_once('../inc/class.LanguageMenuOption.php');
-    require_once('../inc/class.ContentInjector.php');
+
+    require_once('inc/class.LanguageMenuOption.php');
+    require_once('inc/class.ContentInjector.php');
 
     LanguageMenuOption::setActiveClassName("lang-switch color-def");
     LanguageMenuOption::setInactiveClassName("lang-switch color-dark");
@@ -22,7 +23,7 @@
             <title><?=$contentInjector->content('metaTitle')?></title>
 
             <link rel="stylesheet" href="<?=$contentInjector->content('styleSrc')?>">
-            <link rel=”canonical” href="<?=$contentInjector->content('canonical')?>">
+            <link rel="canonical" href="<?=$contentInjector->content('canonical')?>">
 
             <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
             <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
