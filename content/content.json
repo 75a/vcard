@@ -5,10 +5,9 @@
             "en": true,
             "de": true
       },
-
       "defaultLanguage": "en",
       "email": "mail@example.com",
-      "canonical": "https://example.com",
+      "canonical": "http://michalbrzozowski.com",
       "avatarSrc": "../images/avatar.jpg",
       "githubUrl": "https://github.com/",
       "linkedInUrl": "https://www.linkedin.com/",
@@ -48,10 +47,9 @@
             },
             "botSafeEmail":
             {
-                  "pl": "Polski",
-                  "en": "English",
-                  "de": "Deutsch"
+                  "pl": "example małpa domain.com",
+                  "en": "example at domain.com",
+                  "de": "example ätt domain.com"
             }
-
       }
 }
