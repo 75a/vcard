@@ -51,8 +51,6 @@
                               </div>
                               <div class="social-icon-wrapper">
                                     <?php $contentInjector->injectExternalLinks() ?>
-
-
                               </div>
                         </aside>
                         <article>
