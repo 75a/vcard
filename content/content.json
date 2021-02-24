@@ -7,7 +7,7 @@
       "default_language": "en",
       "style_src": "style/main.css",
       "email": "mail@example.com",
-      "canonical": "https://example.com",
+      "canonical": "http://localhost",
       "avatar_src": "../images/avatar.jpg",
       "icon_links": {
             "Github": {
@@ -50,5 +50,8 @@
                   "en": "example at domain.com",
                   "de": "example ätt domain.com"
             }
-      }
+      },
+      "css_active_language_menu_option": "lang-switch color-def",
+      "css_inactive_language_menu_option": "lang-switch color-dark"
+
 }
