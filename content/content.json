@@ -1,63 +1,51 @@
 {
-      "languages": 
-      {
+      "languages": {
             "pl": true,
             "en": true,
-            "de": true,
-            "is": false
+            "de": true
       },
-      "defaultLanguage": "en",
-      "styleSrc": "style/main.css",
+      "default_language": "en",
+      "style_src": "style/main.css",
       "email": "mail@example.com",
       "canonical": "https://example.com",
-      "avatarSrc": "../images/avatar.jpg",
-      "iconLinks": {
+      "avatar_src": "../images/avatar.jpg",
+      "icon_links": {
             "Github": {
-                  "iconSrc": "images/icons/github.svg",
+                  "icon_src": "images/icons/github.svg",
                   "url": "https://github.com"
             },
             "LinkedIn": {
-                  "iconSrc": "images/icons/linkedin.svg",
+                  "icon_src": "images/icons/linkedin.svg",
                   "url": "https://linkedin.com"
             }
       },
-
-      "webcontent":
-      {
-            "metaTitle":
-            {
+      "web_content": {
+            "meta_title": {
                   "pl": "Polski",
                   "en": "English",
                   "de": "Deutsch"
             },
-
-            "metaDescription":
-            {
+            "meta_description": {
                   "en": "",
                   "pl": "",
                   "de": ""
             },
-
-            "name":
-            {
+            "name": {
                   "pl": "Polski",
                   "en": "English",
                   "de": "Deutsch"
             },
-            "shortdesc":
-            {
+            "short_description": {
                   "pl":"Polski",
                   "en":"English",
                   "de":"Deutsch"
             },
-            "longdesc":
-            {
+            "long_description": {
                   "pl":"Polski",
                   "en":"English",
                   "de":"Deutsch"
             },
-            "botSafeEmail":
-            {
+            "bot_safe_email": {
                   "pl": "example małpa domain.com",
                   "en": "example at domain.com",
                   "de": "example ätt domain.com"
