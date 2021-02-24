@@ -51,7 +51,7 @@ class LanguageMenuOption
               </li>";
     }
 
-    private function setThisClass(bool $active)
+    private function setThisClass(bool $active): void
     {
         ($active ? $this->thisClass = self::$activeClassName : $this->thisClass = self::$inactiveClassName);
     }
