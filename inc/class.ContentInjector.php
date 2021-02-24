@@ -6,52 +6,26 @@ class ContentInjector
     private array $jsonContent;
     private string $language;
 
-    public function loadJSONContents(string $src): void
+    public function loadJSON(string $src): void
     {
         $contentJSON = file_get_contents($src);
         $this->jsonContent = json_decode($contentJSON, true);
     }
 
-    public function isUserOnLanguageSpecificWebpage(): bool
-    {
-        if (isset($_GET['lang'])){
-            $langParameter = $_GET['lang'];
-            if ($langParameter !== "" && array_key_exists($langParameter,$this->getAvailableLanguages())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public function getDisplayLanguage(): string
     {
-        if (isset($_GET['lang'])){
+        if (isset($_GET['lang'])) {
             $langParameter = $_GET['lang'];
-            if ($langParameter !== "" && array_key_exists($langParameter,$this->getAvailableLanguages())) {
+            if (array_key_exists($langParameter,$this->getAvailableLanguages())) {
                 return strtolower($langParameter);
             }
         }
-        return $this->jsonContent["defaultLanguage"];
+        return $this->jsonContent["default_language"];
     }
-
-    public function getAvailableLanguages(): array
-    {
-        return $this->jsonContent["languages"];
-    }
-    public function getIconLinksData(): array
-    {
-        return $this->jsonContent["iconLinks"];
-    }
-
-
 
     public function getBodyData(): string
     {
-        if ($this->isUserOnLanguageSpecificWebpage()) {
-            return '';
-        } else {
-            return 'data-loadfromstorage';
-        }
+        return ($this->isUserOnLanguageSpecificWebPage() ? '' : 'data-loadfromstorage');
     }
 
     public function setContentLanguage(string $language): void
@@ -64,8 +38,8 @@ class ContentInjector
         if (isset($this->jsonContent[$key])) {
             return $this->jsonContent[$key];
         }
-        if (isset($this->jsonContent['webcontent'][$key][$this->language])){
-            return $this->jsonContent['webcontent'][$key][$this->language];
+        if (isset($this->jsonContent['web_content'][$key][$this->language])){
+            return $this->jsonContent['web_content'][$key][$this->language];
         }
     }
 
@@ -75,7 +49,7 @@ class ContentInjector
             if ($isActive){
                 $menuOption = new LanguageMenuOption();
                 $menuOption->setLanguage($language);
-                $menuOption->setURL($this->content('canonical') . '/' . $language);
+                $menuOption->setURL($this->getCanonicalUrl() . '/' . $language);
                 if ($language == $this->getDisplayLanguage()) {
                     $menuOption->setActive(true);
                 }
@@ -87,18 +61,40 @@ class ContentInjector
     public function injectExternalLinks(): void
     {
         foreach ($this->getIconLinksData() as $service => $serviceData){
-            $iconSrc = $serviceData["iconSrc"];
+            $iconSrc = $serviceData["icon_src"];
             $url = $serviceData["url"];
-            echo "<a href=\"{$url}\" target=\"_blank\"><img class=\"social-icon\" src=\"{$iconSrc}\" alt=\"$service\"></a>";
+            echo "
+                <a href=\"{$url}\" target=\"_blank\">
+                    <img class=\"social-icon\" src=\"{$iconSrc}\" alt=\"$service\">
+                </a>
+            ";
         }
+    }
 
+    private function isUserOnLanguageSpecificWebPage(): bool
+    {
+        if (isset($_GET['lang'])){
+            $langParameter = $_GET['lang'];
+            if ($langParameter !== "" && array_key_exists($langParameter,$this->getAvailableLanguages())) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-/*        <a href="<?=$contentInjector->content('githubUrl')?>" target="_blank">*/
-//            <img class="social-icon" src="images/icons/github.svg" alt="Github">
-//        </a>
-//
-/*        <a href="<?= $contentInjector->content('linkedInUrl') ?>" target="_blank">*/
-//            <img class="social-icon" src="images/icons/linkedin.svg" alt="LinkedIn">
-//        </a>
+    private function getAvailableLanguages(): array
+    {
+        return $this->jsonContent["languages"];
+    }
+
+    private function getIconLinksData(): array
+    {
+        return $this->jsonContent["icon_links"];
+    }
+
+    private function getCanonicalUrl(): string
+    {
+        $canonical = $this->content('canonical');
+        return (substr($canonical, -1) === "/" ? substr($canonical, 0, -1) : $canonical);
     }
 }
